@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  py-script-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: py-script
+    image: py-script:latest
+    volumes:
+      - ./:/home
+    command: tail -F /dev/null
